@@ -1,0 +1,2 @@
+# StoreCMS
+React + Redux
