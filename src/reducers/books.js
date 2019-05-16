@@ -6,7 +6,7 @@ const initialState =[
   {id: Math.random(), title: 'Hello', category: 'World'}
 ];
 
-export const books = (state = initialState, action) => {
+export const books = (state = [], action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return [...state, action.payload];
