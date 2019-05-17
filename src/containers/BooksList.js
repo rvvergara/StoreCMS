@@ -27,23 +27,11 @@ const BooksList = (props) => {
   let showBooks = filter === 'All' ? books : books.filter(book => book.category === filter);
 
   return (
-    <div>
+    <div className="bookList">
       <CategoryFilter onFilterChange={(e) => handleFilterChange(e.target.value)} />
-      <table>
-        <thead>
-        <tr>
-          <th>Book ID</th>
-          <th>Book Title</th>
-          <th>Book Category</th>
-          <th>Remove</th>
-        </tr>
-        </thead>
-        <tbody>
         {showBooks.map((book) => {
           return <Book key={book.id} book={book} onRemove={()=>handleRemoveBook(book)} />
         })}
-        </tbody>
-      </table>
     </div>
   );
 };

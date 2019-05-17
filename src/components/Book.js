@@ -1,14 +1,25 @@
 import React from "react";
 
 const Book = props => {
-  const { id, title, category } = props.book;
+  const { title, category } = props.book;
   return (
-    <tr>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
-      <td><button onClick={props.onRemove}>Remove</button></td>
-    </tr>
+    <div className="singleBook">
+    <div className="left">
+    <span className="category">{category}</span>
+      <span className="title">{title}</span>
+      <button className="remove" onClick={props.onRemove}>Remove</button>
+    </div>
+    <div className="center">
+      <div className="progressBar"></div>
+      <div><span className="percentage">70 %</span><span className="completed">Completed</span></div>
+      
+      </div>
+    <div className="right">
+      <span className="current">Current Chapter</span>
+      <span className="chapter">Chapter 4</span>
+      <button className="update">Update Progress</button>
+    </div>
+    </div>
   );
 };
 

@@ -9,7 +9,7 @@ import * as serviceWorker from "./serviceWorker";
 export const initialState = {
   filter: 'All',
   books: [
-      {id: Math.random(), title: 'Adventures of Arthur Gordon Pimm', category: 'Horror'},
+      {id: Math.random(), title: 'The Narrative of Arthur Gordon Pym of Nantucket', category: 'Horror'},
       {id: Math.random(), title: 'My Name is Khan', category: 'Action'}
     ]
 };

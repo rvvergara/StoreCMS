@@ -5,7 +5,7 @@ const CategoryFilter = (props) => {
   const { onFilterChange } = props;
   const options = ['All',...CATEGORIES].map((category) => (<option key={category}>{category}</option>));
   return (
-    <form>
+    <form className="categoryForm">
       <select onChange={onFilterChange}>
         {options}
       </select>
