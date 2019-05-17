@@ -17,3 +17,12 @@ export const removeBook = (book) => {
       book
   };
 };
+
+export const CHANGE_FILTER = "CHANGE_FILTER";
+
+export const changeFilter = (category) => {
+  return {
+    type: CHANGE_FILTER,
+    payload: category
+  };
+};

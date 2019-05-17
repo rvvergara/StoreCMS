@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {connect}          from 'react-redux';
 import { createBook } from '../actions/index';
 
-const CATEGORIES = ["Action", "Biography", "History", "Horror", "Kids", "Learning", "Sci-Fi"];
+export const CATEGORIES = ["Action", "Biography", "History", "Horror", "Kids", "Learning", "Sci-Fi"];
 
 const mapDispatchToProps = dispatch => {
   return {
-    books: (book) => {
+    createBook: (book) => {
       dispatch(createBook(book))
     }
   };
@@ -28,10 +28,10 @@ class BooksForm extends Component {
 
     const {title, category } = this.state;
     if(title === '' || category === ''){
-      alert('Cant be blank')
+      alert('Cant be blank');
       return;
     }  
-    this.props.books({id: Math.random(),title: title,category: category});
+    this.props.createBook({id: Math.random(),title,category});
 
     this.setState(() => ({
       title: '',

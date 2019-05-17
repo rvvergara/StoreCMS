@@ -1,16 +1,24 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import App from "./components/App";
-import { books } from "./reducers/books";
+import React              from "react";
+import ReactDOM           from "react-dom";
+import {createStore}      from "redux";
+import {Provider}         from "react-redux";
+import App                from "./components/App";
+import reducer from './reducers/index';
 import * as serviceWorker from "./serviceWorker";
 
-const store = createStore(books);
+export const initialState = {
+  filter: 'All',
+  books: [
+      {id: Math.random(), title: 'Adventures of Arthur Gordon Pimm', category: 'Horror'},
+      {id: Math.random(), title: 'My Name is Khan', category: 'Action'}
+    ]
+};
+
+const store = createStore(reducer, initialState);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App/>
   </Provider>,
   document.getElementById("root")
 );
