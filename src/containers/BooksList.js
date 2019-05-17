@@ -28,7 +28,7 @@ const BooksList = (props) => {
 
   return (
     <div>
-      <CategoryFilter onFilterChange={(a) => handleFilterChange(a.target.value)} />
+      <CategoryFilter onFilterChange={(e) => handleFilterChange(e.target.value)} />
       <table>
         <thead>
         <tr>
@@ -39,7 +39,6 @@ const BooksList = (props) => {
         </tr>
         </thead>
         <tbody>
-        {console.log('showBooks',showBooks )}
         {showBooks.map((book) => {
           return <Book key={book.id} book={book} onRemove={()=>handleRemoveBook(book)} />
         })}
