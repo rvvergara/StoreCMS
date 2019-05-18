@@ -46,8 +46,8 @@ class BooksForm extends Component {
       <form className="formBook">
         <h1 className="addBook">ADD NEW BOOK</h1>
         <input onChange={e => this.handleChange('title',e.target.value)} value={this.state.title} />
-        <select onChange={e => this.handleChange('category',e.target.value)}>
-        <option disabled selected>Select</option>
+        <select defaultValue={'DEFAULT'} onChange={e => this.handleChange('category',e.target.value)}>
+        <option value="DEFAULT" disabled>Select</option>
           {options}
         </select>
         <button onClick={this.handleSubmit.bind(this)}>Submit</button>
